@@ -2,6 +2,7 @@
     text-decoration: none;
     list-style: none;
     color: rgb(255, 255, 255);
+    font-family: "Outfit", sans-serif;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
     align-items: center;
     padding: 15px;
     background-color: #19191b00;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 #title {
@@ -32,7 +33,8 @@ body {
 }
 
 #boardcontainer {
-    background-color: #171718;
+    background-color: #17171800;
+    outline: 2px solid #131314;
     width: 372px;
     height: 372px;
     display: flex;
@@ -67,11 +69,10 @@ body {
 .spot {
     width: 124px;
     height: 124px;
-    outline:1px solid #474549;
+    outline:2px solid #464549;
 }
 
 .intro {
-    opacity: 1;
     transition: 0.5s;
     display: flex;
     justify-content: center;
@@ -86,7 +87,6 @@ body {
 }
 
 #playbutton {
-    opacity: 1;
     transition: 0.5s;
     width: 100px;
     height: 50px;
@@ -96,12 +96,11 @@ body {
     font-size: 23px;
 }
 #playbutton:hover {
-    background-color: rgba(51, 139, 55, 0.476);
-    border: 1px solid rgba(79, 167, 85, 0.377);
+    background-color: rgba(51, 139, 55, 0.472);
+    border: 1px solid rgba(79, 167, 85, 0.327);
 }
 
 .welcome {
-    opacity: 1;
     transition: 0.5s;
     font-size: 30px;
 }

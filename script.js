@@ -5,10 +5,11 @@ const intro = document.querySelector('.intro')
 const boardcontainer = document.querySelector("#boardcontainer")
 
 play.addEventListener('click', () => {
-    welcome.style.opacity = '0'
-    play.style.opacity = '0'
-    intro.style.opacity = '0'
+    welcome.style.display = 'none'
+    play.style.display = 'none'
+    intro.style.display = 'none'
     boardcontainer.style.opacity = '1'
+
 })
 
 
