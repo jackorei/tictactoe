@@ -215,3 +215,35 @@ input[type="radio"] {
     background-color: rgba(139, 96, 51, 0.472);
     border: 1px solid rgba(167, 119, 79, 0.327);
 }
+
+@media (max-width: 600px) {
+    #boardcontainer {
+        background-color: #17171800;
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+    }
+    .spot {
+        width: 83.3px;
+        height: 83.3px;
+        outline:2px solid #464549;
+        background-color: #00000000;
+        border: 0px;
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+
+}

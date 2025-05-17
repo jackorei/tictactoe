@@ -145,7 +145,6 @@ const playGame = function (playerOneName, playerTwoName, playerOneMarker, player
             return
         }
         gameBoard.placeMark(index, currentPlayer.marker)
-        console.log(gameBoard.board)
         const someoneWon = checkWin()
         if (!someoneWon) {
             currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne
@@ -156,7 +155,6 @@ const playGame = function (playerOneName, playerTwoName, playerOneMarker, player
             for (const combo of winningCombos) {
                 const [a, b, c] = combo
                 if (gameBoard.board[a] !== '' && gameBoard.board[a] === gameBoard.board[b] && gameBoard.board[a] === gameBoard.board[c]) {
-                console.log(`${currentPlayer.name} has won!`)
                     spots.forEach(spot => {
                         spot.disabled = true
                     });
