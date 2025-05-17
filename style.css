@@ -38,16 +38,18 @@ body {
     display: grid;
     aspect-ratio: 1 / 1;
     grid-template-columns: repeat(3, 1fr);
-    flex-direction: column;
+    grid-template-rows: repeat(3, 1fr);
     opacity: 0;
-    gap: 5px;
+    gap: 2px;
+    padding: 2px;
+    border-radius: 8px;
     margin: 0 auto;
-    outline: 2px solid #131314;
+    box-sizing: border-box;
 }
 
 .spot {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     outline: 5px solid #464549;
     background-color: transparent;
     border: 0px;
