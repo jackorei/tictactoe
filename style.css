@@ -30,12 +30,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     
 
 }
 
 #boardcontainer {
-    max-width: 372px;
+    max-width: 350px;
     width: 100%;
     display: grid;
     aspect-ratio: 1 / 1;
@@ -197,10 +198,16 @@ input[type="radio"] {
 }
 
 
-
-
-
-
-
-
+@media (max-width: 600px) {
+    #boardcontainer {
+        max-width: 260px;
+        width: 100%;
+        display: grid;
+        aspect-ratio: 1 / 1;
+        grid-template-columns: repeat(3, 1fr);
+        flex-direction: column;
+        opacity: 0;
+        gap: 5px;
+        margin: 0 auto;
+    }
 }
