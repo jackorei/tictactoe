@@ -41,7 +41,7 @@ xselect.addEventListener('click', () => {
     gameControl = playGame(playerOneUser, playerTwoUser, playerOneSelect, playerTwoSelect)
     currentplabel.style.opacity = '1'
     boardcontainer.style.opacity = '1'
-    currentplabel.textContent = gameControl.getCurrentPlayerName()
+    currentplabel.textContent = `${gameControl.getCurrentPlayerName()} (${gameControl.getCurrentPlayerMarker()})`
     spots.forEach(spot => {
         spot.disabled = false 
     });
@@ -57,7 +57,7 @@ oselect.addEventListener('click', () => {
     gameControl = playGame(playerOneUser, playerTwoUser, playerOneSelect, playerTwoSelect)
     currentplabel.style.opacity = '1'
     boardcontainer.style.opacity = '1'
-    currentplabel.textContent = gameControl.getCurrentPlayerName()
+    currentplabel.textContent = `${gameControl.getCurrentPlayerName()} (${gameControl.getCurrentPlayerMarker()})`
     spots.forEach(spot => {
         spot.disabled = false 
     });
@@ -66,9 +66,11 @@ oselect.addEventListener('click', () => {
 spots.forEach((spot, index) => {
     spot.addEventListener('click', () => {
         if (gameControl) {
-            gameControl.playRound(index)
+            const someoneWon = gameControl.playRound(index)
             spot.textContent = gameBoard.getBoard()[index]
-            currentplabel.textContent = gameControl.getCurrentPlayerName()
+            if (!someoneWon) {
+                currentplabel.textContent = `${gameControl.getCurrentPlayerName()} (${gameControl.getCurrentPlayerMarker()})`
+            }
         }
     })
 });
@@ -140,6 +142,10 @@ const playGame = function (playerOneName, playerTwoName, playerOneMarker, player
         return currentPlayer.name
     }
 
+    function getCurrentPlayerMarker() {
+        return currentPlayer.marker
+    }
+
     function playRound(index) {
         if (gameBoard.board[index] !== '') {
             return
@@ -149,6 +155,7 @@ const playGame = function (playerOneName, playerTwoName, playerOneMarker, player
         if (!someoneWon) {
             currentPlayer = currentPlayer === playerOne ? playerTwo : playerOne
         }
+        return someoneWon
 
         function checkWin() {
             const winningCombos = [[0,1,2], [0,3,6], [0,4,8], [1,4,7], [2,5,8], [3,4,5], [6,7,8], [2,4,6]]
@@ -158,13 +165,25 @@ const playGame = function (playerOneName, playerTwoName, playerOneMarker, player
                     spots.forEach(spot => {
                         spot.disabled = true
                     });
+                    currentplabel.textContent = 'Game over'
+                    endofgame.style.opacity = '1'
+                    endarea.style.opacity = '1'
+                    endofgame.style.pointerEvents = 'auto'
+                    winlabel.textContent = `${currentPlayer.name} has won!`
+                    return true
+                }
+            }
+            const isTie = gameBoard.board.every(cell => cell !== '')
+            if (isTie) {
+                currentplabel.textContent = 'Game over'
                 endofgame.style.opacity = '1'
                 endarea.style.opacity = '1'
                 endofgame.style.pointerEvents = 'auto'
-                winlabel.textContent = `${currentPlayer.name} has won!`
-                }
+                winlabel.textContent = `It's a tie!`
+                return true
             }
+            return false
         }
     }    
-    return { playRound, getCurrentPlayerName }
+    return { playRound, getCurrentPlayerName, getCurrentPlayerMarker }
 }
