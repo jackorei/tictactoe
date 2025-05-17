@@ -33,31 +33,28 @@ body {
 }
 
 #boardcontainer {
-    max-width: 350px;
-    width: 100%;
+    width: 270px;
+    height: 270px;
     display: grid;
-    aspect-ratio: 1 / 1;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     opacity: 0;
-    gap: 2px;
-    padding: 2px;
-    border-radius: 8px;
-    margin: 0 auto;
-    box-sizing: border-box;
+    grid-gap: 5px;
+    background-color: #2a2a2c;
 }
 
 .spot {
-    width: 100%;
+    border: none;
     height: 100%;
-    outline: 5px solid #464549;
-    background-color: transparent;
-    border: 0px;
-    font-size: 4.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #131314;
+    font-size: 3rem;
+
 }
+
+
+
+
+
 
 .intro {
     transition: 0.5s;
