@@ -199,11 +199,14 @@ input[type="radio"] {
     
     .spot {
         cursor: pointer;
-        height: 60px;
-        width: 60px;
+        height: 90px;
+        width: 90px;
         background-color: #131314;
         border: none;
-        font-size: 30px;
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #playagain {
