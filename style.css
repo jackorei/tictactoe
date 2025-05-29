@@ -186,3 +186,37 @@ input[type="radio"] {
     background-color: rgba(139, 96, 51, 0.472);
     border: 1px solid rgba(167, 119, 79, 0.327);
 }
+
+@media (max-width: 600px) {
+    #boardcontainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 5px;
+        background-color: #2f2f32;
+        display: none;
+    }
+    
+    .spot {
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        background-color: #131314;
+        border: none;
+        font-size: 30px;
+    }
+
+    #playagain {
+        transition: 0.5s;
+        width: 160px;
+        height: 50px;
+        background-color: rgba(162, 104, 59, 0.598);
+        border: 1px solid rgba(195, 142, 92, 0.473);
+        border-radius: 15px;
+        font-size: 21px;
+        cursor: pointer;
+    }
+
+
+
+}
