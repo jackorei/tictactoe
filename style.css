@@ -1,7 +1,7 @@
 * {
     text-decoration: none;
     list-style: none;
-    color: rgb(255, 255, 255);
+    color: rgb(216, 220, 225);
     font-family: "Outfit", sans-serif;
 }
 
@@ -23,6 +23,13 @@ body {
 
 #title {
     font-size: 33px;
+    color: rgb(184, 184, 193);
+    font-weight: 500;
+    text-shadow: 0px 0px 10px #060607;
+}
+
+#gametitleee {
+    color: rgb(163, 174, 199);
 }
 
 .middle {
