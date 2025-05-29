@@ -9,7 +9,42 @@ body {
     background-color: #131314;
     margin: 0px;
     padding: 0px;
-    max-height: 100vh;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+}
+
+.footer {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgb(35, 35, 36);
+}
+  
+  .credit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgb(79, 79, 83);
+    font-size: 16px;
+}
+  
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+}
+  
+  .github-icon {
+    width: 20px;
+    height: 20px;
+    fill: rgb(79, 79, 83);
+    transition: fill 0.3s ease;
+}
+  
+  .github-link:hover .github-icon {
+    fill: #cfcfcf;
 }
 
 .header {
@@ -18,18 +53,12 @@ body {
     align-items: center;
     padding: 15px;
     background-color: #19191b00;
-    margin-bottom: 100px;
 }
 
 #title {
     font-size: 33px;
-    color: rgb(184, 184, 193);
     font-weight: 500;
     text-shadow: 0px 0px 10px #060607;
-}
-
-#gametitleee {
-    color: rgb(163, 174, 199);
 }
 
 .middle {
@@ -37,6 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex: 1;
 }
 
 #boardcontainer {
